@@ -6,18 +6,18 @@ import { storeToRefs } from "pinia";
 
 export const usePokemonsComposables = () => {
     const store = usePokemonsStore();
-    const { offset, teamPokemons, pokemonSelect, pokemons  } = storeToRefs( store );
+    const { offset, limit, teamPokemons, pokemonSelect, pokemons  } = storeToRefs( store );
     
     const isLoading = ref<boolean>(true)
     
 
-    getPokemons(offset.value).then((data) => {
+    getPokemons(offset.value, limit.value).then((data) => {
         pokemons.value.push(...data)
         isLoading.value = false
     })
 
     watch(offset, (newOffset) => {
-        getPokemons(newOffset).then((data) => {
+        getPokemons(newOffset, limit.value).then((data) => {
             pokemons.value.push(...data)
             isLoading.value = false
         })

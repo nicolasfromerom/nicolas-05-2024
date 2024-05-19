@@ -19,7 +19,7 @@ const { pokemons, isLoading, getOffset,createTeam, offset } = usePokemonsComposa
                 />
             </div>
         </div>
-        <div class="button-center">
+        <div class="button-center" v-if="offset < 150">
             <button class="button" @click="getOffset(offset + 25)">Cargar más</button>
         </div>
     </div>
