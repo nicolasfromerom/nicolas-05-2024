@@ -13,6 +13,7 @@ const { pokemons, isLoading, getOffset,createTeam, offset } = usePokemonsComposa
             <div v-for="pokemon in pokemons" :key="pokemon.id" >
                 <PokemonCardComponent
                     :pokemon="pokemon"
+                    class="pokemon-card"
                     @click="createTeam(pokemon)"
                 />
             </div>
@@ -49,6 +50,17 @@ const { pokemons, isLoading, getOffset,createTeam, offset } = usePokemonsComposa
     margin-top: 20px;
     width: 200px;
     border: none
+}
+
+.pokemon-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: solid 2px #8567FF;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 </style>

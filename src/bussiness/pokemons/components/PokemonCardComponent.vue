@@ -46,10 +46,4 @@ defineProps<Pokemon>()
         font-weight: bold;
     }
 
-    .pokemon-card:hover {
-        transform: scale(1.1);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        border: solid 2px #8567FF;
-    }
-
 </style>

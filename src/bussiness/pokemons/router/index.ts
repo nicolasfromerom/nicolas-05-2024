@@ -49,7 +49,7 @@ const pokemonsRouter: RouterLink[]  = [
     {
         path: '/team',
         title: 'Equipo',
-    },
+    }
 ]
 
 export default pokemonsRouter;

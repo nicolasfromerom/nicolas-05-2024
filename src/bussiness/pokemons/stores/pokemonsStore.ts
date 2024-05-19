@@ -9,6 +9,7 @@ export const usePokemonsStore = defineStore('pokemons', ()  => {
     const offset = ref<number>(0);
     const limit:number  = 25;
     const pokemons = ref<PokemonsListResponseData[]>([]);
+    const pokemonSelect = ref<Pokemons>({} as Pokemons);
     const teamPokemons = ref<Pokemons[]>([]);
 
     return {
@@ -18,6 +19,7 @@ export const usePokemonsStore = defineStore('pokemons', ()  => {
         limit,
         pokemons,
         teamPokemons,
+        pokemonSelect,
         //Getters
 
 
@@ -34,6 +36,9 @@ export const usePokemonsStore = defineStore('pokemons', ()  => {
                 return;
             }
             teamPokemons.value.push(pokemons);
+        },
+        setPokemonSelect( pokemon: Pokemons ) {
+            pokemonSelect.value = pokemon;
         }
     }
 });
