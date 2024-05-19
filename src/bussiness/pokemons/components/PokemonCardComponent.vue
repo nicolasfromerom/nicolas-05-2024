@@ -13,7 +13,7 @@ defineProps<Pokemon>()
     <div>
         <section class="pokemon-card">
             <div class="pokemon-img">
-                <img :src="$props.pokemon.img" alt="">
+                <img :src="$props.pokemon.img" :alt="$props.pokemon.name" :class="{'pokemon-selected': $props.pokemon.isSelected}">
             </div>
             <div class="pokemon-name">
                 <span>{{ $props.pokemon.name }}</span>
@@ -47,7 +47,10 @@ defineProps<Pokemon>()
     }
 
     img:hover {
-        transform: scale(1.1);
+        background-color: #8567FF;
+    }
+
+    .pokemon-selected {
         background-color: #8567FF;
     }
 </style>

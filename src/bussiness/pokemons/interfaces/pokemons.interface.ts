@@ -7,4 +7,5 @@ export interface Pokemons {
     stats: Stat[];
     cries: Cries;
     types: Type[];
+    isSelected?: boolean;
 }

@@ -41,6 +41,9 @@ export const usePokemonsComposables = () => {
         },
         setPokemonSelect(pokemon: Pokemons) {
             store.setPokemonSelect(pokemon)
+        },
+        deletePokemonTeam(pokemon: Pokemons) {
+            store.deletePokemonTeam(pokemon)
         }
     }
     

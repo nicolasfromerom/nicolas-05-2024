@@ -32,15 +32,34 @@ export const usePokemonsStore = defineStore('pokemons', ()  => {
         setOffset( newOffset: number ) {
             offset.value = newOffset;
         },
-        setTeamPokemons( pokemons: Pokemons ) {
+        setTeamPokemons( pokemonsTeams: Pokemons ) {
             if( teamPokemons.value.length >= 6 ) return;
 
-            if (teamPokemons.value.find( (pokemon) => pokemon.id === pokemons.id )) return
+            if (teamPokemons.value.find( (pokemon) => pokemon.id === pokemonsTeams.id )) return
 
-            teamPokemons.value.push(pokemons);
+            pokemons.value.forEach( (pokemon) => {
+                if( pokemon.id === pokemonsTeams.id ) {
+                    pokemon.isSelected = true;
+                }
+            })
+
+            teamPokemons.value.push(pokemonsTeams);
         },
         setPokemonSelect( pokemon: Pokemons ) {
             pokemonSelect.value = pokemon;
+        },
+        deletePokemonTeam( pokemonsTeams: Pokemons ) {
+            const index = teamPokemons.value.findIndex( (pokemon) => pokemon.id === pokemonsTeams.id );
+
+            if( index !== -1 ) {
+                teamPokemons.value.splice(index, 1);
+            }
+
+            pokemons.value.forEach( (pokemon) => {
+                if( pokemon.id === pokemonsTeams.id ) {
+                    pokemon.isSelected = false;
+                }
+            })
         }
     }
 });

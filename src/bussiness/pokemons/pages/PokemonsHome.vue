@@ -14,6 +14,7 @@ const { pokemons, isLoading, getOffset,createTeam, offset } = usePokemonsComposa
                 <PokemonCardComponent
                     :pokemon="pokemon"
                     class="pokemon-card"
+                    :class="{ 'pokemon-card-selected': pokemon.isSelected }"
                     @click="createTeam(pokemon)"
                 />
             </div>
@@ -49,12 +50,17 @@ const { pokemons, isLoading, getOffset,createTeam, offset } = usePokemonsComposa
     border-radius: 20px;
     margin-top: 20px;
     width: 200px;
-    border: none
+    border: none;
+    cursor: cursor;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+.pokemon-card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.pokemon-card-selected {
+    transform: scale(1.1);
 }
 
 </style>

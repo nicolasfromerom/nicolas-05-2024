@@ -23,6 +23,7 @@ export const getPokemons = async(offset: number): Promise<Pokemons[]> => {
             stats: data.stats,
             cries: data.cries,
             types: data.types,
+            isSelected: false,
             }   
         });
 

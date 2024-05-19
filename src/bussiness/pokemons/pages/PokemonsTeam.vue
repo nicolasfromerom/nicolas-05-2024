@@ -5,7 +5,7 @@ import PokemonInformationComponent from '../components/PokemonInformationCompone
 import { usePokemonsComposables } from '../composables/usePokemonsComposable';
 import type { Pokemons } from '../interfaces/pokemons.interface';
 
-const { teamPokemons, setPokemonSelect } = usePokemonsComposables();
+const { teamPokemons, setPokemonSelect, deletePokemonTeam } = usePokemonsComposables();
 const router = useRouter();
 const viewPokemonDetail = (pokemon: Pokemons) => {
     setPokemonSelect(pokemon);
@@ -17,8 +17,12 @@ const viewPokemonDetail = (pokemon: Pokemons) => {
 <template>
     <div>
         <div class="card-container">
-            <div v-for="(pokemon, index) in teamPokemons" :key="index" >
+            <div v-for="(pokemon, index) in teamPokemons" :key="index" class="container-info" >
+                <button class="btn-floating btn-delete" @click="deletePokemonTeam(pokemon)">
+                    <i class="material-icons">x</i>
+                </button>
                 <PokemonCardComponent @click="viewPokemonDetail(pokemon)" 
+                    class="pokemon-card"
                     :pokemon="pokemon"
                 />
                 <PokemonInformationComponent :pokemon="pokemon"/>
@@ -38,4 +42,27 @@ const viewPokemonDetail = (pokemon: Pokemons) => {
         grid-template-columns: 1fr;
     }
 }
+
+.pokemon-card:hover {
+    cursor: pointer;
+
+}
+
+.container-info {
+    position: relative;
+}
+
+.btn-delete {
+    /* Estilos del botón flotante */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 1px solid red;
+    color: red;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+  
 </style>
