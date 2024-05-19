@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
 import PokemonCardComponent from '../components/PokemonCardComponent.vue';
 import { usePokemonsComposables } from '../composables/usePokemonsComposable';
 
