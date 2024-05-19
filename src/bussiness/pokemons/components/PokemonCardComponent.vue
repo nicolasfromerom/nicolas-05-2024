@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import type { Pokemons } from '../interfaces/pokemons.interface';
 
-defineProps<Pokemons>()
+interface Pokemon {
+    pokemon: Pokemons
+}
+
+defineProps<Pokemon>()
 
 </script>
 
@@ -9,10 +13,10 @@ defineProps<Pokemons>()
     <div>
         <section class="pokemon-card">
             <div class="pokemon-img">
-                <img :src="$props.img" alt="">
+                <img :src="$props.pokemon.img" alt="">
             </div>
             <div class="pokemon-name">
-                <span>{{ $props.name }}</span>
+                <span>{{ $props.pokemon.name }}</span>
             </div>
         </section>
     </div>

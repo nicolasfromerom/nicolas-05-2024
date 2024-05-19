@@ -2,7 +2,7 @@
 import PokemonCardComponent from '../components/PokemonCardComponent.vue';
 import { usePokemonsComposables } from '../composables/usePokemonsComposable';
 
-const { pokemons, isLoading, getOffset, offset } = usePokemonsComposables();
+const { pokemons, isLoading, getOffset,createTeam, offset } = usePokemonsComposables();
 
 </script>
 
@@ -11,7 +11,10 @@ const { pokemons, isLoading, getOffset, offset } = usePokemonsComposables();
         <h1 v-if="isLoading">Cargando...</h1>
         <div class="card-container">
             <div v-for="pokemon in pokemons" :key="pokemon.id" >
-                <PokemonCardComponent :name="pokemon.name" :id="pokemon.id" :img="pokemon.img"/>
+                <PokemonCardComponent
+                    :pokemon="pokemon"
+                    @click="createTeam(pokemon)"
+                />
             </div>
         </div>
         <div class="button-center">
@@ -20,6 +23,7 @@ const { pokemons, isLoading, getOffset, offset } = usePokemonsComposables();
     </div>
 </template>
 <style scoped>
+
 .card-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

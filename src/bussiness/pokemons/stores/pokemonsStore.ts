@@ -1,6 +1,7 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 import type { PokemonsListResponseData } from '@/bussiness/pokemons/interfaces/pokemons-response.interface';
+import type { Pokemons } from '../interfaces/pokemons.interface';
 
 export const usePokemonsStore = defineStore('pokemons', ()  => {
 
@@ -8,6 +9,7 @@ export const usePokemonsStore = defineStore('pokemons', ()  => {
     const offset = ref<number>(0);
     const limit:number  = 25;
     const pokemons = ref<PokemonsListResponseData[]>([]);
+    const teamPokemons = ref<Pokemons[]>([]);
 
     return {
         // State
@@ -15,7 +17,7 @@ export const usePokemonsStore = defineStore('pokemons', ()  => {
         offset,
         limit,
         pokemons,
-
+        teamPokemons,
         //Getters
 
 
@@ -25,6 +27,13 @@ export const usePokemonsStore = defineStore('pokemons', ()  => {
         },
         setOffset( newOffset: number ) {
             offset.value = newOffset;
+        },
+        setTeamPokemons( pokemons: Pokemons ) {
+            if( teamPokemons.value.length >= 6 ) {
+                console.log('No puedes tener más de 6 pokemons en tu equipo')
+                return;
+            }
+            teamPokemons.value.push(pokemons);
         }
     }
 });
