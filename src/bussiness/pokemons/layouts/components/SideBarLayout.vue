@@ -33,20 +33,23 @@ defineProps<PropsRouter>()
 </template>
 
 <style scoped>
-    div {
-        display: flex;
-    }
 
     .main {
-        margin-top: 50px;
+        margin-top: 110px;
+        margin-left: 350px;
+        margin-bottom: 30px
     }
 
     .sidebar {
-        width: 300px;
-        height: calc(100vh - 60px);
-        padding: 20px;
         box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
-        margin-right: 100px
+        margin-top: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
 </style>

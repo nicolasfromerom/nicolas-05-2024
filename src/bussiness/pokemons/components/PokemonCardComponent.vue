@@ -19,15 +19,16 @@ defineProps<Pokemons>()
 </template>
 <style scoped>
     .pokemon-card {
-        border-radius: 10px;
-        box-shadow: 2px 2px 10px 2px rgb(0 0 0 / 25%);
         text-transform: uppercase;
-        position: relative;
+        width: 150px;
+        height: 200px;
+        border: solid 1px #e2e2e2;
     }
 
     .pokemon-card img {
         width: 100%;
         max-width: 250px;
+        background-color: #e2e2e2
     }
 
     .pokemon-name {
@@ -39,6 +40,12 @@ defineProps<Pokemons>()
 
     .pokemon-name span {
         font-weight: bold;
+    }
+
+    .pokemon-card:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border: solid 2px #8567FF;
     }
 
 </style>

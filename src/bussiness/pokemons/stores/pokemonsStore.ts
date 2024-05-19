@@ -24,7 +24,6 @@ export const usePokemonsStore = defineStore('pokemons', ()  => {
             pokemons.value = newPokemons;
         },
         setOffset( newOffset: number ) {
-            if(offset.value == newOffset) return;
             offset.value = newOffset;
         }
     }
