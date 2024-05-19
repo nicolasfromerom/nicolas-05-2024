@@ -1,11 +1,5 @@
-export interface PokemonsListResponse {
-    count:    number;
-    next:     string;
-    previous: null;
-    results:  PokemonsListResponseData[];
-}
-
-export interface PokemonsListResponseData {
+export interface Pokemons {
+    id: number;
     name: string;
-    url:  string;
+    img: string;
 }

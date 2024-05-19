@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
-import type { PokemonsListResponseData } from '@/bussiness/pokemons/interfaces/pokemons.interface';
+import type { PokemonsListResponseData } from '@/bussiness/pokemons/interfaces/pokemons-response.interface';
 
 export const usePokemonsStore = defineStore('pokemons', ()  => {
 

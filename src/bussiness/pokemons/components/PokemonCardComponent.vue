@@ -1,14 +1,18 @@
 <script setup lang="ts">
+import type { Pokemons } from '../interfaces/pokemons.interface';
+
+defineProps<Pokemons>()
+
 </script>
 
 <template>
     <div>
         <section class="pokemon-card">
             <div class="pokemon-img">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/6.png" alt="">
+                <img :src="$props.img" alt="">
             </div>
             <div class="pokemon-name">
-                <span>Pikachu</span>
+                <span>{{ $props.name }}</span>
             </div>
         </section>
     </div>

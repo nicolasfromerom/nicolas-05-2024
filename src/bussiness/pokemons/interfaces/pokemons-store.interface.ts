@@ -1,4 +1,4 @@
-import type { PokemonsListResponse } from './pokemons.interface';
+import type { PokemonsListResponse } from './pokemons-response.interface';
 
 export interface PokemonsStoreInterface {
     count: number,
