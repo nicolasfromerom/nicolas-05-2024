@@ -44,6 +44,22 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
     },
+    {
+      path: '/not-found',
+      name: 'notFound',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../components/NotFound.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      // redirect: () => ({ name: 'home' }),
+      redirect: () => {
+        console.log('ruta no existe');
+        return { name: 'notFound' };
+      },
+    }
   ]
 })
 

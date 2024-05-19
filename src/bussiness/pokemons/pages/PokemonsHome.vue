@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import PokemonCardComponent from '../components/PokemonCardComponent.vue';
+
 </script>
 
 <template>
     <div>
-        <h1>Pokemons Home</h1>
+        <PokemonCardComponent />
     </div>
 </template>

@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import PokemonsHeaderLayout from '../layouts/components/header/PokemonsHeaderLayout.vue';
+import PokemonsHeaderLayout from '../layouts/components/PokemonsHeaderLayout.vue';
+import SideBarLayout from '../layouts/components/SideBarLayout.vue';
+import pokemonsRouter from '../router';
 </script>
 
 <template>
     <div>
         <PokemonsHeaderLayout />
-        <RouterView />
+        <SideBarLayout :links="pokemonsRouter" />
     </div>
 </template>
