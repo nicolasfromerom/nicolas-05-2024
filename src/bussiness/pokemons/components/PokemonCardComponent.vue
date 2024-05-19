@@ -24,14 +24,14 @@ defineProps<Pokemon>()
 <style scoped>
     .pokemon-card {
         text-transform: uppercase;
-        width: 150px;
-        height: 200px;
+        width: 200px;
+        height: 250px;
         border: solid 1px #e2e2e2;
     }
 
     .pokemon-card img {
         width: 100%;
-        max-width: 250px;
+        max-width: 200px;
         background-color: #e2e2e2
     }
 
@@ -46,4 +46,8 @@ defineProps<Pokemon>()
         font-weight: bold;
     }
 
+    img:hover {
+        transform: scale(1.1);
+        background-color: #8567FF;
+    }
 </style>

@@ -6,9 +6,8 @@ import { storeToRefs } from "pinia";
 
 export const usePokemonsComposables = () => {
     const store = usePokemonsStore();
-    const { offset, teamPokemons, pokemonSelect } = storeToRefs( store );
+    const { offset, teamPokemons, pokemonSelect, pokemons  } = storeToRefs( store );
     
-    const pokemons = ref<Pokemons[]>([])
     const isLoading = ref<boolean>(true)
     
 

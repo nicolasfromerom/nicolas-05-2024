@@ -18,13 +18,13 @@ const playSound = (sound: string) => {
     <div>
         <section>
             <div>
-                <span>Tipos</span>
-                <div v-for="(pokemons, index) in $props.pokemon.types" :key="index">
-                    <span>{{ pokemons.type.name }}</span>
-                </div>  
+                <span class="titles">Tipos</span>
+                <div class="container">
+                    <span v-for="(pokemons, index) in $props.pokemon.types" :key="index" class="container-types">{{ pokemons.type.name }}</span>
+                </div> 
             </div>
-            <div>
-                <span>Stats</span>
+            <div class="container">
+                <span class="titles">Stats</span>
                 <button @click="playSound($props.pokemon.cries.latest)">Sonido</button>
             </div>
             <div v-for="(pokemons, index) in $props.pokemon.stats" :key="index">
@@ -51,7 +51,7 @@ const playSound = (sound: string) => {
         border: 2px solid #8567FF;
         height: 12px;
         position: relative;
-        width: 150px;
+        width: 200px;
         margin-bottom: 3px;
     }
 
@@ -63,19 +63,22 @@ const playSound = (sound: string) => {
         top: 0px;
     }
 
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+
+    .container-types
+    {
+        background-color: #8567FF;
+        border-radius: 20px;
+        color: white;
+        padding: 5px;
+        margin: 5px;
+        width: 50%;
+        text-align: center;
+    }
+
 
 </style>
-
-<!-- border-bottom: 2px solid black;
-border: 2px solid black;
-height: 12px;
-position: relative;
-width: 100%;
-
-
-background-color: black;
-height: 8px;
-left: 0px;
-position: absolute;
-top: 0px;
-width: 25%; -->

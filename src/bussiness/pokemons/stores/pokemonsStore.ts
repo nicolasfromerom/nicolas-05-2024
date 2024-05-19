@@ -8,33 +8,35 @@ export const usePokemonsStore = defineStore('pokemons', ()  => {
     const count = ref<number>(0);
     const offset = ref<number>(0);
     const limit:number  = 25;
-    const pokemons = ref<PokemonsListResponseData[]>([]);
+    const pokemonsList = ref<PokemonsListResponseData[]>([]);
     const pokemonSelect = ref<Pokemons>({} as Pokemons);
     const teamPokemons = ref<Pokemons[]>([]);
+    const pokemons = ref<Pokemons[]>([])
 
     return {
         // State
         count,
         offset,
         limit,
-        pokemons,
+        pokemonsList,
         teamPokemons,
         pokemonSelect,
+        pokemons,
         //Getters
 
 
         // Actions
         setPokemons( newPokemons: PokemonsListResponseData[] ) {
-            pokemons.value = newPokemons;
+            pokemonsList.value = newPokemons;
         },
         setOffset( newOffset: number ) {
             offset.value = newOffset;
         },
         setTeamPokemons( pokemons: Pokemons ) {
-            if( teamPokemons.value.length >= 6 ) {
-                console.log('No puedes tener más de 6 pokemons en tu equipo')
-                return;
-            }
+            if( teamPokemons.value.length >= 6 ) return;
+
+            if (teamPokemons.value.find( (pokemon) => pokemon.id === pokemons.id )) return
+
             teamPokemons.value.push(pokemons);
         },
         setPokemonSelect( pokemon: Pokemons ) {
