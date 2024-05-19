@@ -10,11 +10,13 @@ const { pokemons, isLoading, getOffset,createTeam, offset } = usePokemonsComposa
     <div>
         <h1 v-if="isLoading">Cargando...</h1>
         <div class="card-container">
-            <div v-for="pokemon in pokemons" :key="pokemon.id" >
+            <div v-for="pokemon in pokemons" :key="pokemon.id" class="container-info">
+                <button v-if="pokemon.isSelected" class="btn-floating btn-select">
+                    <i class="material-icons">{{pokemon.id}}</i>
+                </button>
                 <PokemonCardComponent
                     :pokemon="pokemon"
                     class="pokemon-card"
-                    :class="{ 'pokemon-card-selected': pokemon.isSelected }"
                     @click="createTeam(pokemon)"
                 />
             </div>
@@ -54,13 +56,20 @@ const { pokemons, isLoading, getOffset,createTeam, offset } = usePokemonsComposa
     cursor: cursor;
 }
 
-.pokemon-card:hover {
+.btn-select {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 1px solid green;
+    color: green;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
-    transform: scale(1.1);
 }
 
-.pokemon-card-selected {
-    transform: scale(1.1);
+.container-info {
+    position: relative;
 }
 
 </style>

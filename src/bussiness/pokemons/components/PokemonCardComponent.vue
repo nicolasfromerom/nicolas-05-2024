@@ -32,7 +32,7 @@ defineProps<Pokemon>()
     .pokemon-card img {
         width: 100%;
         max-width: 200px;
-        background-color: #e2e2e2
+        background-color: #8567FF
     }
 
     .pokemon-name {

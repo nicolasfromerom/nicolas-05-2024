@@ -20,7 +20,6 @@ defineProps<PropsRouter>()
             :to="link.path">
             {{ link.title }}
         </RouterLink>
-        <span>Pokemones</span>
     </nav>
     <div>
         <section class="main">
@@ -39,6 +38,7 @@ defineProps<PropsRouter>()
         padding: 20px;
         height: 60px;
         width: 100%;
+        z-index: 1000;
     }
 
     div .main {
@@ -50,6 +50,16 @@ defineProps<PropsRouter>()
         width: 100%;
         margin-top: 110px;
         margin-bottom: 30px;
+    }
+    
+    a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .router-link-active{
+        text-decoration: underline;
     }
 
 </style>
