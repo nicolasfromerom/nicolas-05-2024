@@ -1,39 +1,27 @@
-# nicolas-05-2024
+# Fronted 
 
-This template should help get you started developing with Vue 3 in Vite.
+## Installation
 
-## Recommended IDE Setup
+- Clonar el repositorio
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Instalar proyecto con npm
 
-## Type Support for `.vue` Imports in TS
+    - Dentro de la raíz del proyecto ejecutar:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+  npm install
 ```
+    
+## Deployment
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
 ```
+Para desplegar este proyecto en modo de desarrollo ejecutar: 
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
+```bash
+  npm run serve
 ```
+Para desplegar este proyecto en modo produccion ejecutar
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+```bash
+  npm run build
 ```
